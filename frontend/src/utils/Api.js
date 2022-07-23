@@ -105,6 +105,7 @@ class Api {
 const api = new Api(
   'https://mesto.vova.nomoredomains.xyz',
   {
+    authorization: '8ecd362d-8687-40cb-8171-87d5d8b4e71d',
     'Content-Type': 'application/json'
   }
 );
