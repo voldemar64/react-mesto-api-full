@@ -21,7 +21,7 @@ module.exports.signupValidation = celebrate({
 
 module.exports.currentUserValidation = celebrate({
   params: Joi.object().keys({
-    id: Joi.string().required().hex(),
+    id: Joi.string().required().hex().length(24),
   }),
 });
 
