@@ -43,12 +43,13 @@ class Api {
       method: 'PATCH',
       headers: this._getHeaders(),
       body: JSON.stringify({
-        "name": name,
-        "about": about
+        name: name,
+        about: about
       })
     })
       .then(res => {
         return this._handleRes(res);
+        console.log(name, about);
       })
   }
 
@@ -57,7 +58,7 @@ class Api {
       method: 'PATCH',
       headers: this._getHeaders(),
       body: JSON.stringify({
-        "avatar": data.avatar
+        avatar: data.avatar
       })
     })
       .then(res => {
