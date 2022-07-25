@@ -36,8 +36,8 @@ function App() {
     if (loggedIn) {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then(([userData, cards]) => {
-        setCurrentUser(userData)
-        setCards(cards)
+        setCurrentUser(userData.user)
+        setCards(cards.cards)
       })
       .catch(err => console.log(`Ошибка при изначальной отрисовке данных: ${err}`));
     }
