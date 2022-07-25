@@ -27,6 +27,7 @@ function App() {
   const [cards, setCards] = React.useState([])
   const [loggedIn, setLoggedIn] = React.useState(false)
   const [mailName, setMailName] = React.useState('')
+  const [popupParams, setPopupParams] = React.useState({title: '', photo: ''})
   const [popupTitle, setPopupTitle] = React.useState('')
   const [popupPhoto, setPopupPhoto] = React.useState('')
   const history = useHistory()
