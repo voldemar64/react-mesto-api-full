@@ -35,9 +35,9 @@ function App() {
   React.useEffect(() => {
     if (loggedIn) {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
-      .then(([userData, cards]) => {
+      .then(([userData, cardsData]) => {
         setCurrentUser(userData.user)
-        setCards(cards.cards)
+        setCards(cardsData.cards)
       })
       .catch(err => console.log(`Ошибка при изначальной отрисовке данных: ${err}`));
     }
@@ -50,7 +50,7 @@ function App() {
         .then(res => {
           if (res) {
             setLoggedIn(true)
-            setMailName(res.email)
+            setMailName(res.user.email)
           }
         })
         .catch(err => console.log(`Не получается токен: ${err}`))
