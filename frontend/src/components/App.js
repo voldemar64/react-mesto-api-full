@@ -27,7 +27,6 @@ function App() {
   const [cards, setCards] = React.useState([])
   const [loggedIn, setLoggedIn] = React.useState(false)
   const [mailName, setMailName] = React.useState('')
-  const [popupParams, setPopupParams] = React.useState({title: '', photo: ''})
   const [popupTitle, setPopupTitle] = React.useState('')
   const [popupPhoto, setPopupPhoto] = React.useState('')
   const history = useHistory()
@@ -51,7 +50,7 @@ function App() {
         .then(res => {
           if (res) {
             setLoggedIn(true)
-            setMailName(res.data.email)
+            setMailName(res.email)
           }
         })
         .catch(err => console.log(`Не получается токен: ${err}`))
