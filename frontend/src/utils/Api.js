@@ -15,7 +15,7 @@ class Api {
   _getHeaders() {
     const jwt = localStorage.getItem('jwt');
     return {
-      "Authorization": `Bearer ${jwt}`,
+      'Authorization': `Bearer ${jwt}`,
       ...this.headers
     }
   }
@@ -43,8 +43,8 @@ class Api {
       method: 'PATCH',
       headers: this._getHeaders(),
       body: JSON.stringify({
-        name: name,
-        about: about
+        "name": name,
+        "about": about
       })
     })
       .then(res => {
@@ -57,7 +57,7 @@ class Api {
       method: 'PATCH',
       headers: this._getHeaders(),
       body: JSON.stringify({
-        avatar: data.avatar
+        "avatar": data.avatar
       })
     })
       .then(res => {
@@ -70,8 +70,8 @@ class Api {
       method: 'POST',
       headers: this._getHeaders(),
       body: JSON.stringify({
-        name: data.name,
-        link: data.link
+        "name": data.name,
+        "link": data.link
       })
     })
       .then(res => {
