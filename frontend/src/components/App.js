@@ -214,15 +214,15 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="main">
         <Switch>
-          <Route path="/sign-in">
+          <Route path="/signin">
             <>
-              <Header route="/sign-up" title="Регистрация"/>
+              <Header route="/signup" title="Регистрация"/>
               <Login onLogin={handleLogin}/>
             </>
           </Route>
-          <Route path="/sign-up">
+          <Route path="/signup">
             <>
-              <Header route="/sign-in" title="Войти"/>
+              <Header route="/signin" title="Войти"/>
               <Register onRegister={handleRegister}/>
             </>
           </Route>
@@ -244,7 +244,7 @@ function App() {
             </>
           </Route>
           <Route path="*">
-            {loggedIn ? <Redirect to="/"/> : <Redirect to="/sign-in"/>}
+            {loggedIn ? <Redirect to="/"/> : <Redirect to="/signin"/>}
           </Route>
         </Switch>
 
