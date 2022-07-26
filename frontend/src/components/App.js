@@ -156,7 +156,7 @@ function App() {
   function handleUndateAvatar(data) {
     api.patchAvatar(data)
       .then(newAvatar => {
-        setCurrentUser(newAvatar.avatar)
+        setCurrentUser(newAvatar)
         closeAllPopups()
       })
       .catch(err => {
