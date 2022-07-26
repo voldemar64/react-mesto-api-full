@@ -48,7 +48,6 @@ class Api {
       })
     })
       .then(res => {
-        console.log(name, about);
         return this._handleRes(res);
       })
   }
