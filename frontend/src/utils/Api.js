@@ -16,7 +16,7 @@ class Api {
     const jwt = localStorage.getItem('jwt');
     return {
       'Authorization': `Bearer ${jwt}`,
-      ...this.headers
+      ...this._headers
     }
   }
 
