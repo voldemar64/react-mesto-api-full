@@ -113,6 +113,7 @@ class Api {
 const api = new Api(
   'https://api.mesto.vova.nomoredomains.xyz',
   {
+    'Accept': 'application/json',
     'Content-Type': 'application/json'
   }
 );

@@ -10,7 +10,6 @@ const { signinValidation, signupValidation } = require('./middlewares/validation
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const errorHandler = require('./middlewares/errors');
-const NotFound = require('./errors/NotFound');
 
 const { PORT = 3000 } = process.env;
 const app = express();
