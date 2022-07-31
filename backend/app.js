@@ -40,11 +40,6 @@ app.use('/users', require('./routes/users'));
 app.use('/cards', require('./routes/cards'));
 
 app.use(errorLogger);
-
-app.use('*', (_req, res, next) => {
-  next(new NotFound('Страница не найдена'));
-});
-
 app.use(errors());
 app.use(errorHandler);
 
