@@ -35,15 +35,11 @@ module.exports.getCurrentUser = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'CastError') {
-        throw new ValidationError('Передан некорректный _id пользователя.');
-      }
-      if (err.name === 'NotFound') {
-        throw new NotFound('Пользователь по указанному _id не найден.');
+        next(new ValidationError('Передан некорректный _id пользователя.'));
       }
 
-      throw err;
-    })
-    .catch(next);
+      next(err);
+    });
 };
 
 module.exports.getUser = (req, res, next) => {
@@ -51,21 +47,17 @@ module.exports.getUser = (req, res, next) => {
   User.findById(userId)
     .then((user) => {
       if (!user) {
-        throw new NotFound('Пользователь по указанному _id не найден.');
+        next(new NotFound('Пользователь по указанному _id не найден.'));
       }
       return res.send({ user });
     })
     .catch((err) => {
       if (err.name === 'CastError') {
-        throw new ValidationError('Передан некорректный _id пользователя.');
-      }
-      if (err.name === 'NotFoundError') {
-        throw new NotFound('Пользователь по указанному _id не найден.');
+        next(new ValidationError('Передан некорректный _id пользователя.'));
       }
 
-      throw err;
-    })
-    .catch(next);
+      next(err);
+    });
 };
 
 module.exports.createUser = (req, res, next) => {
@@ -87,15 +79,14 @@ module.exports.createUser = (req, res, next) => {
     .then((user) => res.status(201).send({ user }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        throw new ValidationError('Переданы некорректные данные при создании пользователя.');
+        next(new ValidationError('Переданы некорректные данные при создании пользователя.'));
       }
       if (err.code === 11000) {
-        throw new ConflictError('Пользователь с таким email уже существует');
+        next(new ConflictError('Пользователь с таким email уже существует'));
       }
 
-      throw err;
-    })
-    .catch(next);
+      next(err);
+    });
 };
 
 module.exports.patchUser = (req, res, next) => {
@@ -110,12 +101,11 @@ module.exports.patchUser = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные при обновлении профиля.');
+        next(new ValidationError('Переданы некорректные данные при обновлении профиля.'));
       }
 
-      throw err;
-    })
-    .catch(next);
+      next(err);
+    });
 };
 
 module.exports.patchAvatar = (req, res, next) => {
@@ -130,10 +120,9 @@ module.exports.patchAvatar = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные при обновлении аватара.');
+        next(new ValidationError('Переданы некорректные данные при обновлении аватара.'));
       }
 
-      throw err;
-    })
-    .catch(next);
+      next(err);
+    });
 };
