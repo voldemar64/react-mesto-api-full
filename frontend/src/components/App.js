@@ -116,7 +116,7 @@ function App() {
     if (isLiked) {
       api.removeCardLike(card._id)
         .then((newCard) => {
-          setCards((state) => state.map((c) => c._id === card._id ? newCard : c))
+          setCards((state) => state.map((c) => c._id === card._id ? newCard.card : c))
         })
         .catch(err => {
           console.log(`лайк не ставится: ${err}`);
@@ -124,7 +124,7 @@ function App() {
     } else {
       api.addCardLike(card._id)
       .then((newCard) => {
-        setCards((state) => state.map((c) => c._id === card._id ? newCard : c))
+        setCards((state) => state.map((c) => c._id === card._id ? newCard.card : c))
       })
       .catch(err => {
         console.log(`лайк не убирается: ${err}`);
@@ -145,7 +145,7 @@ function App() {
   function handleUpdateUser(user) {
     api.patchUserInfo(user)
       .then(newInfo => {
-        setCurrentUser(newInfo)
+        setCurrentUser(newInfo.user)
         closeAllPopups()
       })
       .catch(err => {
@@ -156,7 +156,7 @@ function App() {
   function handleUndateAvatar(data) {
     api.patchAvatar(data)
       .then(newAvatar => {
-        setCurrentUser(newAvatar)
+        setCurrentUser(newAvatar.user)
         closeAllPopups()
       })
       .catch(err => {
@@ -167,7 +167,7 @@ function App() {
   function handleAddPlaceSubmit(card) {
     api.addNewCard(card)
       .then(newCard => {
-        setCards([newCard, ...cards])
+        setCards([newCard.card, ...cards])
         closeAllPopups()
       })
       .catch(err => {
