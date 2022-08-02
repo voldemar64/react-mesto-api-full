@@ -119,7 +119,7 @@ function App() {
           setCards((state) => state.map((c) => c._id === card._id ? newCard.card : c))
         })
         .catch(err => {
-          console.log(`лайк не ставится: ${err}`);
+          console.log(`лайк не убирается: ${err}`);
         })
     } else {
       api.addCardLike(card._id)
@@ -127,7 +127,7 @@ function App() {
         setCards((state) => state.map((c) => c._id === card._id ? newCard.card : c))
       })
       .catch(err => {
-        console.log(`лайк не убирается: ${err}`);
+        console.log(`лайк не ставится: ${err}`);
       })
     }
   }
