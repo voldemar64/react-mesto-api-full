@@ -24,6 +24,7 @@ app.use(
       'http://mesto.vova.nomoredomains.xyz',
       'https://api.mesto.vova.nomoredomains.xyz',
       'http://api.mesto.vova.nomoredomains.xyz',
+      'https://api.mesto.vova.nomoredomains.xyz/users/me',
     ],
   }),
 );
