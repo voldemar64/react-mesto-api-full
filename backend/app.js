@@ -12,13 +12,22 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const errorHandler = require('./middlewares/errors');
 const NotFound = require('./errors/NotFound');
 
-const { PORT = 3001 } = process.env;
+const { PORT = 3000 } = process.env;
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
-  cors(),
+  cors({
+    origin: [
+      'https://mesto.vova.nomoredomains.xyz',
+      'http://mesto.vova.nomoredomains.xyz',
+      'https://api.mesto.vova.nomoredomains.xyz',
+      'http://api.mesto.vova.nomoredomains.xyz',
+      'http://localhost:3000',
+      'https://localhost:3000',
+    ],
+  }),
 );
 
 app.get('/crash-test', () => {
