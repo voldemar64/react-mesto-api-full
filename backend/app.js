@@ -22,8 +22,9 @@ app.use(
     origin: [
       'https://mesto.vova.nomoredomains.xyz',
       'http://mesto.vova.nomoredomains.xyz',
-    ]
-    credentials: true,
+      'https://api.mesto.vova.nomoredomains.xyz',
+      'http://api.mesto.vova.nomoredomains.xyz',
+    ],
   }),
 );
 
