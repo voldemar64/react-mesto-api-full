@@ -36,8 +36,8 @@ app.get('/crash-test', () => {
 
 app.use(requestLogger);
 
-app.post('/signin', signinValidation, login);
 app.post('/signup', signupValidation, createUser);
+app.post('/signin', signinValidation, login);
 
 app.use(auth);
 
