@@ -109,38 +109,6 @@ function App() {
     history.push('/sign-in')
   }
 
-  function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
-
-    if (isLiked) {
-      api.removeCardLike(card._id)
-        .then((newCard) => {
-          setCards((state) => state.map((c) => c._id === card._id ? newCard.card : c))
-        })
-        .catch(err => {
-          console.log(`лайк не убирается: ${err}`);
-        })
-    } else {
-      api.addCardLike(card._id)
-      .then((newCard) => {
-        setCards((state) => state.map((c) => c._id === card._id ? newCard.card : c))
-      })
-      .catch(err => {
-        console.log(`лайк не ставится: ${err}`);
-      })
-    }
-  }
-
-  function handleCardDelete(card) {
-    api.deleteCard(card)
-      .then(() => {
-        setCards((cards) => cards.filter((c) => c._id !== card._id && c))
-    })
-      .catch(err => {
-        console.log(`карточка не удаляется: ${err}`)
-      });
-  }
-
   function handleUpdateUser(user) {
     api.patchUserInfo(user)
       .then(newInfo => {
@@ -172,6 +140,38 @@ function App() {
       .catch(err => {
         console.log(`карточка не добавилась:  ${err}`)
       })
+  }
+
+  function handleCardLike(card) {
+    const isLiked = card.likes.some(i => i === currentUser._id);
+
+    if (isLiked) {
+      api.removeCardLike(card._id)
+        .then((newCard) => {
+          setCards((state) => state.map((c) => c._id === card._id ? newCard.card : c))
+        })
+        .catch(err => {
+          console.log(`лайк не убирается: ${err}`);
+        })
+    } else {
+      api.addCardLike(card._id)
+      .then((newCard) => {
+        setCards((state) => state.map((c) => c._id === card._id ? newCard.card : c))
+      })
+      .catch(err => {
+        console.log(`лайк не ставится: ${err}`);
+      })
+    }
+  }
+
+  function handleCardDelete(card) {
+    api.deleteCard(card)
+      .then(() => {
+        setCards((cards) => cards.filter((c) => c._id !== card._id && c))
+    })
+      .catch(err => {
+        console.log(`карточка не удаляется: ${err}`)
+      });
   }
 
   function handleInfoTooltip() {
