@@ -44,12 +44,14 @@ function AddPlacePopup(props) {
       required id="title" placeholder="Название" 
       className="popup__input popup__input_value_title"
       onChange={changeTitle}
+      value={title}
       />
       <span className="popup__input-error title-error"></span>
       <input name="link" type="url" required id="link" 
       placeholder="Ссылка на картинку" 
       className="popup__input popup__input_value_link"
       onChange={changeLink}
+      value={link}
       />
       <span className="popup__input-error link-error"></span>
     </PopupWithForm>
