@@ -31,18 +31,6 @@ function App() {
   const [popupPhoto, setPopupPhoto] = React.useState('')
   const history = useHistory()
 
-
-  React.useEffect(() => {
-    if (loggedIn) {
-      Promise.all([api.getUserInfo(), api.getInitialCards()])
-      .then(([userData, cardsData]) => {
-        setCurrentUser(userData.user)
-        setCards(cardsData.cards)
-      })
-      .catch(err => console.log(`Ошибка при изначальной отрисовке данных: ${err}`));
-    }
-  }, [loggedIn])
-
   React.useEffect(() => {
     const jwt = localStorage.getItem("jwt");
     if (jwt){
@@ -56,6 +44,17 @@ function App() {
         .catch(err => console.log(`Не получается токен: ${err}`))
     }
   }, [])
+
+  React.useEffect(() => {
+    if (loggedIn) {
+      Promise.all([api.getUserInfo(), api.getInitialCards()])
+      .then(([userData, cardsData]) => {
+        setCurrentUser(userData.user)
+        setCards(cardsData.cards)
+      })
+      .catch(err => console.log(`Ошибка при изначальной отрисовке данных: ${err}`));
+    }
+  }, [loggedIn])
 
   React.useEffect(() => {
     if (loggedIn) {
