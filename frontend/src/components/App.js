@@ -86,8 +86,8 @@ function App() {
       .then(res => {
         if (res) {
           localStorage.setItem('jwt', res.token)
-          setLoggedIn(true)
           setMailName(email)
+          setLoggedIn(true)
           history.push('/')
         } else{
           setPopupTitle('Что-то пошло не так! Попробуйте ещё раз.')

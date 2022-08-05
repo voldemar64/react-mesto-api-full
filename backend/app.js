@@ -22,8 +22,8 @@ app.use(
     origin: [
       'https://mesto.vova.nomoredomains.xyz',
       'http://mesto.vova.nomoredomains.xyz',
-      'http://localhost:3000',
-      'https://localhost:3000',
+      'https://api.mesto.vova.nomoredomains.xyz',
+      'http://api.mesto.vova.nomoredomains.xyz',
     ],
   }),
 );
