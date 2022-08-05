@@ -50,7 +50,7 @@ function App() {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then(([userData, cardsData]) => {
         setCurrentUser(userData.user)
-        setCards(cardsData.cards)
+        setCards(cardsData.cards.reverse())
       })
       .catch(err => console.log(`Ошибка при изначальной отрисовке данных: ${err}`));
     }
