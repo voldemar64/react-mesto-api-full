@@ -6,7 +6,7 @@
   line-height: 22px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .header__email {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -14,8 +14,8 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 424px) {
   .header__email {
-    width: calc(100% - 110px);
+    width: 92px;
   }
 }
