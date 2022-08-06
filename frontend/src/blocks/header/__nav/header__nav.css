@@ -1,12 +1,12 @@
 .header__nav {
   display: flex;
-  column-gap: 24px;
+  gap: 0 24px;
   align-items: center;
 }
 
 @media screen and (max-width: 768px) {
   .header__nav {
-    column-gap: 10px;
+    gap: 0 10px;
     margin-right: 8.4%;
   }
 }
