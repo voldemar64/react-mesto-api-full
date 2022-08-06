@@ -5,3 +5,12 @@
   font-size: 18px;
   line-height: 22px;
 }
+
+@media screen and (max-width: 768px) {
+  .header__email {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: calc(100% - 50px);
+  }
+}

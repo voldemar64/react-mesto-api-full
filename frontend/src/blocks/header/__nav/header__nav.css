@@ -3,3 +3,10 @@
   gap: 24px;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .header__nav {
+    flex-direction: column;
+    margin-right: 8.4%;
+  }
+}

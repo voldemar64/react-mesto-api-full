@@ -13,3 +13,11 @@
 .login__input:last-of-type {
   margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .login__input {
+    width: 260px;
+    font-size: 14px;
+    line-height: 16.94px;
+  }
+}

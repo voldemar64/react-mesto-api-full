@@ -1,4 +1,5 @@
 .main {
+  width: 100%;
   font-family: 'Inter', 'Arial', sans-serif;
   background-color: #000;
   display: flex;
