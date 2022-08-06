@@ -11,6 +11,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: calc(100% - 80px);
+    width: calc(100% - 110px);
   }
 }
