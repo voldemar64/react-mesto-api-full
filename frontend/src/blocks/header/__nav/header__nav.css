@@ -1,4 +1,6 @@
 .header__nav {
+  padding: 0;
+  margin: 0;
   display: flex;
   gap: 0 24px;
   align-items: center;
