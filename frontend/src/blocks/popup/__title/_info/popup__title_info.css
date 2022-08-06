@@ -3,3 +3,10 @@
   width: 358px;
   margin: 0 auto 60px;
 }
+
+@media screen and (max-width: 424px) {
+  .popup__title_info {
+    width: 244px;
+    margin-bottom: 50px;
+  }
+}

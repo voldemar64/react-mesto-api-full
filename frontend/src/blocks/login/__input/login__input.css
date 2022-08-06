@@ -14,7 +14,7 @@
   margin: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .login__input {
     width: 260px;
     font-size: 14px;

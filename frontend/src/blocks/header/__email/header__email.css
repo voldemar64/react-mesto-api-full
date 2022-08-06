@@ -16,6 +16,6 @@
 
 @media screen and (max-width: 424px) {
   .header__email {
-    width: 100px;
+    max-width: 100px;
   }
 }

@@ -3,3 +3,9 @@
   height: 120px;
   margin: 60px auto 32px;
 }
+
+@media screen and (max-width: 424px) {
+  .popup__photo {
+    margin: 50px auto 40px;
+  }
+}
