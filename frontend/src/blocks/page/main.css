@@ -1,4 +1,5 @@
 .main {
+  min-height: 720px;
   width: 100%;
   font-family: 'Inter', 'Arial', sans-serif;
   background-color: #000;
