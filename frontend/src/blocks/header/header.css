@@ -13,3 +13,9 @@
     padding: 28px 0 26.5px;
   }
 }
+
+@media screen and (max-width: 424px) {
+  .header {
+    justify-content: space-evenly;
+  }
+}
